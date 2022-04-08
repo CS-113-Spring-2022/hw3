@@ -190,8 +190,8 @@
   \begin{solution}
     % Write your solutions here
     \begin{parts}
-    \part 
-    \part 
+    \part $M_{R^{-1}}$ can be obtained by taking the transpose of the matrix $M_R$ as rows and columns are reversed because in inverse relation ordered pairs are reversed.
+    \part $M_{\overline{R}}$ can be obtained by replacing all the 0s in the matrix $M_R$ by 1s and all the 1s by 0s because all the edges in the relation are removed from the cartesian.
     \end{parts}
   \end{solution}
   
@@ -203,16 +203,46 @@
     \end{parts}
   \end{multicols}
   \begin{solution}
-    % Write your solutions here
     \begin{parts}
-    \part 
-    \part 
+    \part  Reflexivity: \newline
+    $\forall$A$\in2^X$, we know that $|A| = |A|$ \newline
+    Therefore according to relation, $(A, A)$ $\in R$. \newline 
+    We know that $\forall$A$\in$$2^X$, A$R$A. Hence it is reflexive. \newline
+    \newline
+    Transitivity: $\forall$A,B$\in2^X$, if $|A| = |B|$ and $|B| = |C|$, then $|A| = |C|$. \newline
+    Therefore, according to relation, if $(A, B) \land (B, C) \in R$ then $(A, C) \in R$. \newline
+    Hence, it is transitive. A$R$B $\land$ B$R$A $\implies$ B$R$A \newline
+    \newline
+    Symmetric: $\forall$A,B$\in2^X$, if $|A| = |B|$, then $|B| = |A|$. \newline
+    Therefore, according to relation, if $(A, B) \in R$ then $(B, A) \in R$. \newline
+    Hence, it is symmetric. A$R$B $\Longleftrightarrow$ B$R$A \newline
+    \newline
+    This is an equivalence relation because it is transitive, reflexive and symmetric.
+    \part Reflexivity:
+    $\forall$A$\in2^X$, $|A| \not < |A|$. \newline
+    Hence this relation is not reflexive. A$ \not S$A  \newline
+    \newline
+    Transitivity: $\forall$A,B$\in2^X$, if $|A| < |B|$ and $|B| < |C|$, then $|A| < |C|$. \newline
+    Therefore, according to relation, if $(A, B) \land (B, C) \in R$ then $(A, C) \in R$. \newline
+    Hence, it is transitive. A$S$B $\land$ B$S$A $\implies$ B$S$A \newline
+    \newline
+    Symmetric: $\forall$A,B$\in2^X$, if $|A| < |B|$, then $|B| \not < |A|$. \newline
+    Therefore, this relation is not symmetric. A$R$B $\nleftrightarrow$ B$R$A \newline
+    \newline
+    This is not an equivalence relation because this relation is only transitive.
     \end{parts}
   \end{solution}
 
 \question[5] A partition $P_1$ is called a \textit{refinement} of the partition $P_2$ if every set in $P_1$ is a subset of one of the sets in $P_2$. Given equivalence relations, $R_1$ and $R_2$, on a set, $A$, and the corresponding partitions, $P_1$ and $P_2$, show that $R_1 \subseteq R_2$ if and only if $P_1$ is a refinement of $P_2$.
   \begin{solution}
-    % Write your solution here
+    Assuming that $R_1 \subseteq R_2$. \newline Let us assume that [a]$p_1$ is an equivalence class in $P_1$. \newline 
+    Let x $\in$ [a]$p_1$, then (x, a) $\in$ $R_1 \subseteq R_2$. \newline
+    Thus, (x, a) $\in$ $R_2$. Therefore, x $\in$ [a]$p_2$ ([a]$p_2$ is an equivalence class in $P_2$) because $P_2$ is in correspondance with $R_2$. \newline
+    So we have proved that if $R_1$ $\subseteq$ $R_2$ then $P_1$ is a refinement of $P_2$ \newline
+    Now taking $P_1$ as a refinement of $P_2$, we know that [a]$p_1$ $\subseteq$ [a]$p_2$ for all a $\in$ $A$. \newline 
+    So for all x $\in$ A, (x, a) $\in$ $R_1$ $\implies$ (x, a) $\in$ $R_2$. Therefore  $R_1 \subseteq R_2$. \newline
+    Therefore, $R_1$ $\subseteq$ $R_2$ if and only if $P_1$ is a refinement of $P_2$.
+     
   \end{solution}
 
   \section{Ordering}
@@ -227,14 +257,32 @@
   \begin{solution}
     % Write your solutions here
     \begin{parts}
-    \part 
-    \part 
+    \part Let $R$ be the relation represented by the adjacency matrix: \newline
+    $R$ = \{(a, a), (a, b), (a, c), (b, a), (b, b), (c, c)\} \newline
+    This is not a partial order relation because it is not antisymmetric. (a, b) and (b, a) both exist which means that the relation is not antisymmetric by counter example.
+    \part  $R$ = \{(a, a), (a, b), (a, c), (b, a), (b, b), (b, c), (c, c), (c, d),  (d, a),  (d, b),  (d, d)\} \newline
+    This is not a partial order relation because it is not antisymmetric. (a, b) and (b, a) both exist which means that the relation is not antisymmetric by counter example.
     \end{parts}
   \end{solution}
   
 \question[5] Given a poset $(S, R)$, its \textit{dual} is $(S,R^{-1})$. Show that the dual is also a poset. 
   \begin{solution}
-    % Write your solution here    
+    To be a poset, the relation needs to be transitive, antisymmetric and reflexive: \newline
+    Reflexivity: according to given condition, $\forall x \in S$, x$R$x which is equivalent to (x, x) \newline
+    For its dual, $\forall x \in S$, x$R^{-1}$x, which is equivalent to (x, x). \newline
+    Thus for each x$\in$S there exists (x, x) which means, the dual is reflective. \newline
+    \newline
+    Antisymmetric: according to given condition, $\forall a, b \in X, a R b \land b R a \Rightarrow a = b $ -eq(i)\newline
+    We know that, a$R^{-1}$b = b$R$a and b$R^{-1}$a = a$R$b \newline
+    Putting values in eq(i): $\forall a, b \in X, bR^{-1}a \land aR^{-1}b \Rightarrow a = b $ \newline
+    Thus, the dual is antisymmetric $\forall a, b \in X$. \newline
+    \newline
+    Transitive: according to given condition, $\forall a, b, c \in X, a R b \land b R c \implies a R c$ -eq(ii)\newline
+    We know that, c$R^{-1}$b = b$R$c and b$R^{-1}$a = a$R$b and c$R^{-1}$a = a$R$c\newline
+    Putting values in eq(ii): $\forall a, b, c \in X, cR^{-1}b \land bR^{-1}a \implies  cR^{-1}a  $\newline
+    Thus, the dual is transitive as well $\forall a, b, c \in X$. \newline
+    \newline
+    As the dual is reflexive, transitive and antisymmetric, the dual is also a poset.
   \end{solution}
   
 \question Answer the following questions for the partial order represented by the given Hasse diagram.
@@ -274,14 +322,14 @@
   \begin{solution}
     % Write your solutions here
     \begin{parts}
-    \part 
-    \part 
-    \part 
-    \part 
-    \part 
-    \part 
-    \part 
-    \part 
+    \part $m, l$
+    \part $a, b, c$
+    \part $l$ and $m$ are both at the same level so there is no greatest element.
+    \part No there isn't a least element.
+    \part $k, m, l$
+    \part k
+    \part There are no lower bounds because there is no common elements between all 3 of the elements.
+    \part No there isn't a greatest lower bound of $f, g, h$ since there are no lower bounds.
     \end{parts}
   \end{solution}
   
